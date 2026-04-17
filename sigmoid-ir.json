@@ -1,0 +1,23 @@
+{
+    "resourceSpecId": "88888888-8888-4888-8888-888888888888",
+    "stableId": "cpu-high-alarm",
+    "displayName": "ECS CPU High Alarm",
+    "category": "monitoring",
+    "iconUrl": "https://cdn.sigmoid.us/icons/aws/full-size/svg/monitoring/cloudwatch.svg",
+    "resourceType": "monitoring.cloudwatch",
+    "vpcDependency": "none",
+    "status": "draft",
+    "position": { "x": 700, "y": 100 },
+    "terraform": {
+        "module": {
+            "source": "github.com/sigmoid-hq/terraform-aws-cloudwatch-alarm",
+            "ref": "main"
+        }
+    },
+    "easy": {
+        "hidden": true,
+        "alias": "Monitoring Alert",
+        "group": "observability-alert",
+        "priority": 10
+    }
+}
