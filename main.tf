@@ -40,8 +40,10 @@ resource "aws_cloudwatch_metric_alarm" "this" {
   alarm_actions             = var.alarm_actions
   ok_actions                = var.ok_actions
   insufficient_data_actions = var.insufficient_data_actions
-  datapoints_to_alarm       = var.datapoints_to_alarm
+  datapoints_to_alarm       = var.datapoints_to_alarm > 0 ? var.datapoints_to_alarm : null
   treat_missing_data        = var.treat_missing_data
+
+  evaluate_low_sample_count_percentiles = var.evaluate_low_sample_count_percentiles
 
   tags = local.resolved_tags
 }
